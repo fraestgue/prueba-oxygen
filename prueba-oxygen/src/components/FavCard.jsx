@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import API_URL from "../utils/api";
 
+
 function FavCard() {
-  const [allFav, setAllFav] = useState(null);
+  const [allFav, setAllFav] = useState([]);
 
   useEffect(() => {
     getFavConvertions();
@@ -18,6 +19,15 @@ function FavCard() {
     }
   };
 
+  const deleteFav = async (id) => {
+    try {
+        await axios.delete(`${API_URL}/favresults/${id}`);
+        setAllFav(allFav.filter(fav => fav.id !== id)); 
+    } catch (error) {
+        console.error(error);
+    }
+};
+
   if (allFav === null) {
     return <h3>Cargando...</h3>;
   }
@@ -31,6 +41,8 @@ function FavCard() {
             {eachFav.originalNumber} {eachFav.originalUnit} →{" "}
             {eachFav.result.toFixed(2)} {eachFav.resultUnit}
           </h5> }
+
+          <button onClick={() => deleteFav(eachFav.id)}>Eliminar</button>
           
         </div>
         )

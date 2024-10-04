@@ -65,6 +65,7 @@ function Card() {
 
     try {
       axios.post(`${API_URL}/favresults`, newFav);
+      setConver((prevFavs) => [...prevFavs, newFav])
       setResult(newFav.result);
     } catch (error) {
       console.log(error);
@@ -84,7 +85,7 @@ function Card() {
         <select onChange={handleConver}>
           <option value=""> -- SELECCIONA LA CONVERSIÓN --</option>
           {conver.map((eachConver) => {
-            return <option key={eachConver.name}>{eachConver.name}</option>;
+            return <option key={eachConver.id}>{eachConver.name}</option>;
           })}
         </select>
 
@@ -100,14 +101,7 @@ function Card() {
         <button type="submit">Fav</button>
       </form>
       <div>{result > 0 ? ( <h3>{result.toFixed(2)} {selectedConver.resultUnit} </h3>) : 0} </div>
-      {/* <div>
-      {result > 0 && selectedConver && (
-          <h4>
-            Resultado: {inputCuantity} {selectedConver.originalUnit} = {result}{" "}
-            
-          </h4>
-        )}
-      </div> */}
+     
     </div>
   );
 }
