@@ -8,7 +8,7 @@ function FavCard() {
 
   useEffect(() => {
     getFavConvertions();
-  }, []);
+  }, [allFav]);
 
   const getFavConvertions = async () => {
     try {

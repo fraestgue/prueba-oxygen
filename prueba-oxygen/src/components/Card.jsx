@@ -5,7 +5,7 @@ import InvertirValores from "./InvertirValores";
 
 function Card() {
   const [conver, setConver] = useState(null);
-  const [inputCuantity, setInputCuantity] = useState(0);
+  const [inputCuantity, setInputCuantity] = useState("");
   const [selectedConver, setSelectedConver] = useState(null);
   const [result, setResult] = useState(0);
 
@@ -17,7 +17,7 @@ function Card() {
   };
 
   const handleInputCuantity = (e) => {
-    const valorNumerico = parseFloat(event.target.value)
+    const valorNumerico = parseFloat(e.target.value)
     setInputCuantity(valorNumerico);
   };
 
