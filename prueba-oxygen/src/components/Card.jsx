@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import API_URL from "../utils/api";
+import InvertirValores from "./InvertirValores";
 
 function Card() {
   const [conver, setConver] = useState(null);
@@ -16,7 +17,8 @@ function Card() {
   };
 
   const handleInputCuantity = (e) => {
-    setInputCuantity(e.target.value);
+    const valorNumerico = parseFloat(event.target.value)
+    setInputCuantity(valorNumerico);
   };
 
   useEffect(() => {
@@ -77,8 +79,6 @@ function Card() {
   }
 
 
-  
-
   return (
     <div>
       <form onSubmit={handleSubmitFav}>
@@ -101,6 +101,17 @@ function Card() {
         <button type="submit">Fav</button>
       </form>
       <div>{result > 0 ? ( <h3>{result.toFixed(2)} {selectedConver.resultUnit} </h3>) : 0} </div>
+
+      <InvertirValores 
+      conver={conver}
+      selectedConver= {selectedConver}
+      setSelectedConver={setSelectedConver}
+      inputCuantity={inputCuantity}
+      setInputCuantity={setInputCuantity}
+      result={result}
+      setResult={setResult}
+
+      />
      
     </div>
   );
