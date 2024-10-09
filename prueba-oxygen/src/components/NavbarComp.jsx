@@ -1,10 +1,10 @@
 
-import logo from "../assets/images/logo.png"
+
 
 function NavbarComp() {
   return (
     <div> 
-        <img src={logo} alt="unit converter logo" />
+       <h2 className="titulo">⇄ unit converter</h2>
         <hr />
     </div>
   )

@@ -2,7 +2,10 @@
 
 function Footer() {
   return (
-    <footer>Footer</footer>
+    <footer>
+      <div>Terms of service</div>
+      <div>Privacy Policy</div>
+    </footer>
   )
 }
 

@@ -1,26 +1,19 @@
+import "./App.css";
 
-import './App.css'
-import Card from './components/Card'
-import FavCard from './components/FavCard'
-import Footer from './components/Footer'
-import NavbarComp from './components/NavbarComp'
+import Footer from "./components/Footer";
+import MainComponent from "./components/MainComponent";
+import NavbarComp from "./components/NavbarComp";
 
 function App() {
-  
-
   return (
-    <>
-    <NavbarComp />
+    <div className="main-content">
+      <NavbarComp />
 
-    <Card/>
+      <MainComponent />
 
-    <FavCard />
-
-
-    <Footer/>
-     
-    </>
-  )
+      <Footer />
+    </div>
+  );
 }
 
-export default App
+export default App;
