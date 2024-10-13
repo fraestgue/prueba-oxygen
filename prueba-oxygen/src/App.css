@@ -52,12 +52,15 @@
     background-color: #e3e3e3;
     color: #6f6f6f;
     border-radius: 15px;
-    /* padding: 3px; */
     display: flex;
     justify-content: space-between;
     padding-left: 10px;
     padding-right: 10px;
     margin: 10px;
+  }
+
+  .saved-text {
+    color: #6f6f6f;
   }
 
   .saved button {
@@ -95,7 +98,7 @@
     padding: 10px;
     margin-top: 20px;
     margin-bottom: 65px;
-    width: 60vw;
+    width: 717px;
     justify-content: center;
   }
 
@@ -104,6 +107,7 @@
     color: white;
     text-decoration: underline;
     border: none;
+    font-size: 1.2em;
   }
 
   select {
@@ -111,40 +115,68 @@
     color: white;
     text-decoration: underline;
     border: none;
+    font-size: 1.2em;
   }
 
   button {
     background-color: rgb(46, 0, 57);
     color: white;
     border: none;
-  }
-
-  .first {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
+    font-size: 1.4em;
+    height: 0.5m;
   }
 
   .selectConver {
-    width: 40vw;
+    width: 16vw;
     text-align: left;
   }
 
   .inputNumber {
-    width: 40vw;
+    width: 16vw;
     text-align: right;
   }
 
+  /* .form {
+    display: flex;
+    flex-wrap: wrap;
+  } */
+
+  .pc-first {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    margin-top: 15px;
+  }
+
+  .second {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+  
   .saved {
     background-color: #e3e3e3;
     color: #6f6f6f;
     border-radius: 15px;
-    /* padding: 3px; */
     display: flex;
     justify-content: space-between;
     padding-left: 10px;
     padding-right: 10px;
     margin: 10px;
+    width: 340px;
+  }
+
+  .saved-text {
+    color: #6f6f6f;
+  }
+
+  .pc-saved {
+    width: 760px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    flex: 0 1 50%;
   }
 
   .saved button {

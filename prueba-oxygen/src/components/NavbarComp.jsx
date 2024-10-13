@@ -3,7 +3,7 @@
 
 function NavbarComp() {
   return (
-    <div> 
+    <div className="nav"> 
        <h2 className="titulo">⇄ unit converter</h2>
         <hr />
     </div>

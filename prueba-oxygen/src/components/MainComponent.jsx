@@ -33,7 +33,7 @@ const deleteFavFromState = (id) => {
   };
 
   return (
-    <div>
+    <div className="page">
       <Card updateFavs={updateFavs}  />
 
       <FavCard allFav={allFav} deleteFavFromState={deleteFavFromState} />

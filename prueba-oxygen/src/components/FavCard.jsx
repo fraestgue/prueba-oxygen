@@ -21,7 +21,9 @@ function FavCard({allFav, deleteFavFromState}) {
 
   return (
     <div>
-      <h3>saved</h3>
+      <h3 className="saved-text">saved</h3>
+      <div className="pc-saved">
+      
       {allFav.map((eachFav) => {
         return (
             <div key={eachFav.id} className="saved">
@@ -30,7 +32,6 @@ function FavCard({allFav, deleteFavFromState}) {
             {eachFav.result.toFixed(2)} {eachFav.resultUnit}
           </h5> )}
 
-          {/* {console.log(eachFav.result.toFixed(2))} */}
 
           <button onClick={() => deleteFav(eachFav.id)}>╳</button>
           
@@ -38,6 +39,7 @@ function FavCard({allFav, deleteFavFromState}) {
         )
         
       })}
+      </div>
     </div>
   );
 }

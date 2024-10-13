@@ -36,8 +36,6 @@ function Card({ updateFavs }) {
     }
   };
 
-  // console.log(conver)
-
   useEffect(() => {
     if (selectedConver && inputCuantity > 0) {
       const calculatedResult = selectedConver.equivalence * inputCuantity;
@@ -63,13 +61,15 @@ function Card({ updateFavs }) {
       originalUnit: selectedConver.originalUnit,
       originalNumber: inputCuantity,
       resultUnit: selectedConver.resultUnit,
-      result: parseFloat((selectedConver.equivalence * inputCuantity).toFixed(2)),
+      result: parseFloat(
+        (selectedConver.equivalence * inputCuantity).toFixed(2)
+      ),
       id: generateRandomId(),
     };
 
     try {
       await axios.post(`${API_URL}/favresults`, newFav);
-      updateFavs( newFav);
+      updateFavs(newFav);
       // console.log(conver)
       // setResult(newFav.result);
       // console.log(result)
@@ -108,7 +108,9 @@ function Card({ updateFavs }) {
   return (
     <div className="card">
       <h1>convert</h1>
+
       <form onSubmit={handleSubmitFav} className="form">
+        <div className="pc-first">
         <div className="first">
           <select
             onChange={handleConver}
@@ -135,9 +137,10 @@ function Card({ updateFavs }) {
             value={inputCuantity}
           ></input>
           {selectedConver && <span>{selectedConver.originalUnit}</span>}
-        </div>
-
-        <div className="first">
+        </div></div>
+        
+        <div className="second">
+          <br />
           <button type="submit">♡</button>
           <div>
             {result > 0 ? (
